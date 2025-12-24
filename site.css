@@ -1,0 +1,145 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.100rem rgb(155, 150, 150), 0 0 0 0.250rem #777879;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  background-color: #F2E6D8;
+  background-image: url('/images/bg-warm.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  user-select: none; /*  Tidak bisa di-block/select */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Replace multiple html/body rules with a single no-scroll, fit-to-viewport setup */
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* disable page scrolling */
+  font-size: 14px; /* keep existing base font-size */
+  position: relative;
+}
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    user-select: none;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    
+}
+
+.header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #333;
+    z-index: 7;
+    position: sticky;
+    top: 0;
+    user-select: none; /*  Tidak bisa di-block/select */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    min-height: 25px;
+    border-bottom: none;
+    size-adjust: 1;
+}
+
+.page-wrapper {
+  height: 100vh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main {
+  flex: 1 1 auto;
+  min-height: 0; /* allow children to scroll internally if needed */
+  overflow: hidden;
+}
+
+.navbar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-bottom: none !important;
+}
+
+/* --- Header size and no-scroll layout tweaks --- */
+/* Make header more compact */
+.header {
+  padding: 0.25rem 0.5rem;
+  height: 56px;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Reduce navbar internal spacing */
+.navbar, .header .navbar {
+  padding: 0;
+  min-height: 0;
+}
+
+/* Brand / title sizing inside header */
+.navbar .navbar-brand, .header .brand {
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Ensure page fills viewport and main grows so short content doesn't cause scroll */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* keep scrolling when needed, but not force it */
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Responsive: make header slightly smaller on small screens */
+@media (max-width: 768px) {
+  .header { height: 50px; padding: 0 0.5rem; }
+  .navbar .navbar-brand { font-size: 0.95rem; }
+}
